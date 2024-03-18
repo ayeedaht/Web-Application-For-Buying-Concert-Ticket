@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+/*Set the web page to full*/
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Fixed the issue of setting width, then the output size is not equal to the specified width.*/
+    border: none;
+    text-decoration: none; /*Underline*/   
+}
+
+/*change font only logo in header*/
+header .logo{
+    font-family: 'Rampart One', cursive;
+}
+
+/*change font in body and footer*/
+body, footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*change background color*/
+html, body {
+    /*place-items: center;*/
+    display: grid;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /*Supervise content. hidden is not visible*/ 
+    background: -webkit-linear-gradient(left, #BDCDD6, #DEFCF9); /*There is a gradient from left to right.*/
+}
+
+/*nav bar*/
+header {
+    position: fixed; /*Follow in everywhere, like a menu bar*/
+    /*top:0; left:0; right:0;*/
+    width: 100%;
+    background: #ffffff;
+    /*padding: 0 25px;*/
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;   /*Determine the order of web objects. If the index is greater, it will be in front.*/
+    box-shadow: rgba(102, 102, 107, 0.2) 0px 7px 29px 0px;
+}
+
+/*change position of logo img*/
+.logo img{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+
+.logo {
+    color: #002fff;
+    font-size: 35px;
+    line-height: 80px; /*line spacing*/
+    padding: 0 30px;
+    font-weight: bold;
+}
+
+
+.bar a {
+    color: rgb(119, 119, 119);
+    font-size: 15px;
+    padding: 12px;  /*space between context and border*/
+    margin-right: 10px; /*space between other context*/
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+
+.iconNav #acctbar{
+    background: #002fff;
+
+}
+
+
+.bar a:hover { 
+    cursor: pointer;
+    background: #ff00b3;
+    color: whitesmoke;
+    transition: .3s;
+}
+
+
+.iconNav #searchbar,
+.iconNav #heartbar,
+.iconNav #shopbar,
+.iconNav #acctbar{
+    cursor: pointer;                             
+    margin-left: 15px;
+    width: 40px; height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color:rgb(255, 253, 242);  
+    border-radius: 50%;
+    text-align: center;
+    background: rgb(27,27,27,.5);
+}
+
+
+.iconNav #searchbar:hover, 
+.iconNav #heartbar:hover,
+.iconNav #shopbar:hover{
+    background: #ff00b3;
+    transition: 0.4s;
+}
+
+.iconNav #acctbar{
+    background: #002fff;
+    transition: 0.4s;
+}
+
+
+.iconbar {
+    font-size: 20px;
+    color:rgb(255, 253, 242);
+    float: right;
+    cursor: pointer;
+    margin-left: 30px;
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #002fff;
+}
+
+.iconbar {
+    display: none;
+}
+
+/*Press to select and have a color.
+::selection {
+    background: #fa4299;
+    color: #fff;
+}*/
+
+/*create box for all input*/
+.wrapper {
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 480px; /*Defines the maximum width of the box*/
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1); /*shadow*/
+}
+
+/*set text-align h1 to center*/
+.title{
+    text-align: center;
+    
+}
+
+
+/*adjust the box size*/
+.form-inner form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*adjust the box size of the input*/
+.form-inner form .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+/* .form-inner form .row {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+} */
+
+/* .form-inner form .row .col input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 3px;
+    transition: all 0.3s ease;
+} */
+
+.form-inner form .box input {
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 3px;
+    transition: all 0.3s ease;
+}
+
+
+.lastcol{
+    
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.form-inner form .lastcol select{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.form-inner form .row input:focus
+,.form-inner form .lastcol select:focus {
+    border-color: #fa4299;
+}
+
+/*fucus - Change the color of the border when a user presses it.*/
+.form-inner form .field input:focus {
+    border-color: #fa4299;
+    /* box-shadow: inset 0 0 3px #fb6aae; */
+}
+
+/*Sets the color when not pressed to gray.*/
+.form-inner form .field input::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+/*form .field input:focus::placeholder {
+    color: #b3b3b3;
+}*/
+
+/*to the width of the border to the context 5 pixels*/
+.form-inner form .pass-link {
+    margin-top: 5px;
+}
+
+/*change align text to center*/
+.form-inner form .signup-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*If not pressed there will be NO underline. */
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+    color: #fa4299;
+    text-decoration: none;
+}
+
+/*Press and there is underline*/
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/*change align text to center*/
+.form-inner .title-login-admin h3{
+    text-align: center;
+}
+
+/*set the button pressed*/
+form .btn {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*Set the color of the button pressed.*/
+form .btn .btn-layer {
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: #362FD9;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+}
+
+/*Change the color of button when the mouse over it.*/
+form .btn:hover .btn-layer {
+    background: #85CDFD;
+}
+
+/*Change the font color and set the aspect.*/
+form .btn input[type="submit"] {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.row {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+.col {
+    padding: 10px;
+    /* font-size: 30px; */
+    /* text-align: center; */
+}
+
+.checkbox{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 990px) {
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav {
+        display: block;
+    }
+
+    header .bar {
+        position: fixed;
+        width: 100%;
+        height: 210px;
+        top: 80px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;
+        padding: 10px;
+    }
+
+    .iconbar:hover{
+        background-color: #4450fd;
+        transition: 0.5s;
+    }
+
+    .bar a {
+        display: block;
+        font-size: 17px;
+        padding: 12px;
+        /*ระยะห่าง*/
+        margin: 10px;
+        /*ให้ระหว่างกล่อง home about... ห่าง*/
+        /* border-radius: 50px;
+        transition: 0.5s;
+      /*  z-index: 10;กำหนดลำดับของสิ่งของในเว็บ ถ้าindexมากกว่ามันจะอยู่ห้ย่า*/
+    }
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+
+
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav #searchbar,
+    .iconNav #heartbar,
+    .iconNav #shopbar,
+    .iconNav #acctbar {
+        display: inline;
+        margin: 20px;
+    }
+
+    .iconNav #searchbar:hover,
+    .iconNav #heartbar:hover,
+    .iconNav #shopbar:hover,
+    .iconNav #acctbar:hover {
+        width:50px;
+        height: 50px;
+        color: #ffd900;
+        transition: 0.4s;
+        background:none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-image: none;
+
+}
+
+    header .iconNav {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 290px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;   
+    }
+}
+

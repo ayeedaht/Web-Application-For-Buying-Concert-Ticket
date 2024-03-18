@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<head>
+    <title>Product management!</title>
+    <link rel="stylesheet" href="/style/management.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="/html/HomePage.html" class="logo"><img src="/homepagePic/logo/TicketBoo_Logo.png"> Admin ticketBoo!</a>
+        <!--show the logo in nav bar-->
+
+        <!--show the text button in the middle-->
+        <nav class="bar">
+            <a class="thispage" href="/html/Product-management.html">Product management</a>
+            <a href="/html/User-account-management.html">User account management</a>
+
+        </nav>
+
+        <!--show the symbol in the right of the page-->
+        <div class="iconNav">
+            <a href="/html/Userlogin.html"><i class="fa fa-user" id="acctbar"></i></a>
+        </div>
+
+        <!--this will not show yet at fisrt until the size of screen get smaller-->
+        <div class="iconbar" onclick="showBar()">
+            <i class="fa fa-bars" id="menubar"></i>
+        </div>
+    </header>
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <!--this section use to show the overall concert-->
+    <div class="title-page">
+        <h1>Product management</h1>
+    </div>
+    <!-- This contain-box was created to move the class of customize to the center. -->
+    <div class="contain-box">
+        <!-- This class is to store data for adding a new products -->
+        <div class="customize">
+            <a href="/product">
+                <h3>Add product</h3>
+            </a>
+        </div>
+    </div>
+    <div class="contain-box">
+        <form type="normal" action="/search-product-submit" method="POST" id="search-form">
+            <label>Name:</label>
+            <input type="text" name="name" id="name"></input>
+            <label>Location:</label>
+            <input type="text" name="location" id="loca"></input>
+            <label>Date:</label>
+            <input type="text" name="date" id="date"></input>
+            <input type="submit" value="Search"></input>
+        </form>
+    </div>
+
+    <div id="search-results"></div>
+    <div id="json-data">
+        <!-- JSON data will be displayed here -->
+    </div>
+    <section>
+        <!-- This class is to store all card to the container -->
+        <div class="cards-container">
+            <!--this will show the topic of this section-->
+            <h1 class="topicRec"> Events</h1>
+            <div class="rowSlide">
+
+                <p id="output"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="wrapper" id="editForm" style="display:none;">
+        <!-- Form for user to edit -->
+        <form class="product" action="/editproduct" method="POST">
+            <!--send all of this input to this path /editproduct-->
+            <h1 class="topic">Edit Product Information</h1>
+            <!--Class field is to hold all the value from the input.-->
+            <div class="field">
+                <label for="ticcode">Ticket Code (cannot edit)</label>
+                <input type="text" id="ticcode" name="t_code" placeholder="TK_xx" readonly />
+            </div>
+            <br>
+            <div class="field">
+                <label for="titletxt">Title</label>
+                <input type="text" id="titletxt" name="t_title" placeholder="Title" required/>
+            </div>
+            <br>
+            <div class="field">
+                <label for="Pic">Picture Address</label>
+                <input type="text" id="Pic" name="t_img" title="Picture Address" placeholder="Picture Address" required/>
+            </div>
+            <br>
+            <div class="field">
+                <label for="destxt">Description</label>
+                <input type="text" id="destxt" name="t_desc" placeholder="Description" required/>
+            </div>
+            <br />
+            <div class="field">
+                <label for="locatxt">Location</label>
+                <input type="text" id="locatxt" name="t_loca" placeholder="Location" required/>
+            </div>
+            <br />
+            <div class="field">
+                <label for="dateCon">Date</label>
+                <input type="date" id="dateCon" name="t_date" required/>
+            </div>
+            <br />
+            <div class="field">
+                <label for="timeCon">Time</label>
+                <input type="time" id="timeCon" name="t_time" required/>
+            </div>
+            <br />
+            <div class="field">
+                <label for="priceCon">Price</label>
+                <input type="number" id="priceCon" name="t_price" title="number" required/>
+            </div>
+            <br>
+
+            <div class="total">
+                <div class="pass-link" onclick="closeForm()"> <!--If click this close button, it will close the form-->
+                    <span class="close-symbol"></span>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer" id="ad"></div>
+                    <input type="submit" value="Update" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+        <!--This will show the pop up box when user click the ticket card.-->
+        <div id="infoPop" class="wrapper" style="display:none;">
+            <p id="pop"></p>
+        </div>
+
+    <script>
+        /*This Code will be used when user click submit the form od search the product, it will
+           keep the value from the input that has id of 'name', 'loca', and ;'date'.*/
+        const searchForm = document.getElementById('search-form');
+        searchForm.addEventListener('submit', event => {
+            event.preventDefault();
+            // console.log("here")
+            const name = document.getElementById('name').value;
+            const location = document.getElementById('loca').value;
+            const date = document.getElementById('date').value;
+
+            /*fetch the data from this port*/
+            fetch('http://localhost:3000/search-product-submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, location, date })  /*this send the name, location, and date to port of 3000*/
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector("#output").innerHTML = null;
+                    const jsonData = document.getElementById('output');  // we will post all of the admin in this id
+                    for (let i = 0; i < data.length; i++) {              // this will show the ticket card and it can edit and delete
+                        jsonData.innerHTML +=  `<div class='card' id='${data[i].ticket_code}' onclick="showInfo('${data[i].ticket_code}')"'>`
+                            + "<img src='" + data[i].ticket_img + "' class='card-img' />"
+                            + "<div class='info'>"
+                            + "<h3 class='card-date'>" + data[i].ticket_date.substring(0, 10) + "</h3>"
+                            + "<h1 class='card-name'>" + data[i].ticket_title + "</h1>"
+                            + "<h3 class='card-loca'>" + data[i].ticket_loca + "</h3></div></div>"
+                            + "<div class='button-container'>"
+                            + `<button class='button-edit' role='button' data-code="${data[i].ticket_code}" onclick="showEditForm('${data[i].ticket_code}')" id='edit'>Edit</button>`
+                            + "<button class='button-del' role='button' data-code='" + data[i].ticket_code + "' id='delete'>Delete</button>"
+                            + "</div>";
+                        console.log(" onclick='showEditForm(" + data[i].ticket_code + ")'")
+                    }
+
+                    // If click the delete button, it will come to this code
+                    document.addEventListener('click', function (event) {
+                        // The button that has the class name 'button-del is a delete button'
+                        if (event.target.classList.contains('button-del')) {
+                            const ticketCode = event.target.dataset.code;
+                            console.log('Ticket Code to be deleted: ' + ticketCode);
+
+                            // fetch from this port in the method of delete and send the t_code to
+                            // use it for delete the information in the SQL
+                            fetch(`http://localhost:3000/deleteProduct/`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ t_code: ticketCode })
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.error)
+                                    if (data.error === false) {             // If error==false that mean it's work
+                                        window.location.reload(true);       // it will reload the page to update the value
+                                    }
+                                })
+                                .catch(error => console.error(error));
+                        }
+                    });
+                   
+
+                })
+                .catch(error => console.error(error));
+        });
+
+                /*this function will be called when user click the ticket card. It will fetch to port of 3000
+          and useing the ticketCode to get the information of that card*/
+          function showInfo(ticketCode) {
+            //console.log(ticketCode)
+            fetch(`http://localhost:3000/getticket/${ticketCode}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {                        // we get all of data of that card
+                    console.log(data);
+                    let code = data.ticket_code;
+                    let title = data.ticket_title;
+                    let img = data.ticket_img;
+                    let desc = data.ticket_desc;
+                    let loca = data.ticket_loca;
+                    let date = data.ticket_date;
+                    let time = data.ticket_time;
+                    let price = data.ticket_price;
+                    document.querySelector("#infoPop").innerHTML = null;  // add more html to this id
+                    const pop = document.getElementById('infoPop');
+                    pop.style.display = 'block';                          // at first it doesn't show so we need to set to play again
+                  
+                    pop.innerHTML += "<h1>"+title+" "+"("+code+") </h1>"
+                         + "<div class='box-container'><div class='box-left'><img src='"+img+"' class='picpop' id='picpop' style='height: 400px; width: 290;'/></div>"
+                         + "<div class='box-right'><h3 class='detail'>Description: "+desc+"</h3>"
+                         + "<h3 class='detail'>Location: "+loca+"</h3>"
+                         + "<h3 class='detail'>Date: "+date.substring(0,10)+"</h3>"
+                         + "<h3 class='detail'>Time: "+time+"</h3>"
+                         + "<h3 class='detail'>Price: "+price+" baht</h3></div></div>"
+                         + "<div class='pass-link' onclick='closeFormPop()'><span class='close-symbol'></span></div>";
+                })
+              
+        }
+
+    </script>
+
+    <script>
+        
+        /**This function is to pop up the box of edit form
+         * we also set the value of input of the ticket code
+         * so user cannot modify this part. and show it by 
+         * using the style.display
+        */
+        function showEditForm(Code) {
+            const form = document.getElementById('editForm');
+            const codeInput = document.getElementById('ticcode');
+            codeInput.value = Code;
+            form.style.display = 'block'; // Show the form
+        }
+
+        /**Function of closeform is make the pop up box
+         * to disappear again by useing style to close this
+        */
+        function closeForm() {
+            const form = document.getElementById('editForm');
+            form.style.display = 'none';
+
+        }
+
+        // this will close the pop up box which is the box that has the detail of that ticket
+        function closeFormPop() {
+            const form = document.getElementById('infoPop');
+            form.style.display = 'none';
+        }
+
+        let show = 0;
+        function showBar() {
+            /*if show is 0, it will open the bar. and 1 will close the bar*/
+            /*we will change the color and change the position of the bar and icon too 
+            (icon will change in the case of the size of screen change to less than 700px*/
+            if (show == 0) {
+                show = 1;
+                document.getElementsByClassName('bar')[0].style.left = "0px";
+                document.getElementsByClassName('iconNav')[0].style.left = "0px";
+            } else {
+                show = 0;
+                document.getElementsByClassName('bar')[0].style.left = "-100%";
+                document.getElementsByClassName('iconNav')[0].style.left = "-100%";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*แก้เรื่องกำหนด width แล้วขนาดที่ได้ออกมา ไม่เท่ากับ width ที่กำหนดไว้*/
+    text-decoration: none;
+    /*remove the decoration*/
+    /*Underline*/
+}
+
+header .logo {
+    font-family: 'Rampart One', cursive;
+}
+
+body,
+footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+    /*not showing the content that has over size than the page*/
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    /*set this header to get in front*/
+    box-shadow: rgba(102, 102, 107, 0.2) 0px 7px 29px 0px;
+}
+
+.logo img {
+    position: relative;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.logo {
+    color: #002fff;
+    font-size: 35px;
+    line-height: 80px;
+    /*the distance between each sentences ระยะห่างระหว่างบรรทัด*/
+    padding: 0 30px;
+    font-weight: bold;
+}
+
+
+/*this use for nav bar of text button*/
+.bar a {
+    color: rgb(119, 119, 119);
+    font-size: 15px;
+    padding: 12px;
+    /*ระยะห่าง*/
+    margin-right: 10px;
+    /*ให้ระหว่างกล่อง home about... ห่าง*/
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/*the 'Home' which has class of thispage will be the one who has color of blue*/
+.bar a.thispage {
+    background: #002fff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/*Every thing that in the bar with thie a part except 'Home' text button will
+change the background if we hover it.*/
+.bar a:hover:not(a.thispage) {
+    /*ทุกnavยกเว้นปุ่มhome*/
+    cursor: pointer;
+    background: #ff00b3;
+    color: whitesmoke;
+    transition: .3s;
+    /*Add this transition to make it more dimension*/
+}
+
+/*the symbol button in nav bar*/
+.iconNav #acctbar {
+    cursor: pointer;
+    /*if the mouse is on this symbol, it will change the mouse to be pointner*/
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgb(255, 253, 242);
+    border-radius: 50%;
+    /*make this in to circle shape*/
+    text-align: center;
+    background: rgb(27, 27, 27, .5);
+}
+
+
+/*Set this value first and make it display as a none*/
+.iconbar {
+    cursor: pointer;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgb(255, 253, 242);
+
+    /*float: right;*/
+    border-radius: 50%;
+
+    text-align: center;
+    background-color: #002fff;
+}
+
+.iconbar {
+    display: none;
+}
+
+
+/*if we cover this, t will change color with the transition*/
+.iconNav #acctbar:hover {
+    background: #ff00b3;
+    transition: 0.4s;
+}
+
+/*set the body part to order as a column display*/
+body {
+    background: rgb(255, 255, 255);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*This contain-box was created to move the class of customize to the center.*/
+.contain-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*This class is a button to create a form to add a new products.*/
+.customize {
+    display: flex;
+    justify-content: center;
+    /*height: 600px;*/
+    align-items: center;
+    font-size: 20px;
+    margin-right: 20px;
+    background: #ff554f;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    border-radius: 40px;
+}
+
+/*Change color of the text in the customize in white*/
+.customize a {
+    color: white;
+}
+
+/*Change background of the customize in red*/
+.customize:hover {
+    color: white;
+    background-color: #b8332f;
+}
+
+/*Adjust the text of title and form to be centered.*/
+body .title-admin,
+.form-inner {
+    text-align: center;
+}
+
+/*Change font size*/
+.title-admin {
+    font-size: 30px;
+}
+
+/*Change font size*/
+.form-inner {
+    font-size: 15px;
+}
+
+/*Change color of line*/
+hr.newhr {
+    border-top: 0.25px solid rgb(251, 247, 247);
+}
+
+/*Create a rounded box*/
+.boxUsers {
+    font-size: 14px;
+    padding: 30px;
+    margin: 30px 30px 10px 30px;
+    border-radius: 10px;
+    background-color: rgb(238, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*Increase the space in the bottom between the content and the border.*/
+.txt {
+    padding-bottom: 10px;
+}
+
+/*change position to the end*/
+.button-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    
+}
+
+/*Increase the margin in right side*/
+.button-container .button-del {
+    margin-right: 20px;
+    padding: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+
+.button-container .button-edit {
+    margin-right: 10px;
+    padding: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+/*The button of insert, find, edit, and delete that changes color when the mouse is over it.*/
+.button-insert {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #27ae60;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 0.5;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /*vertical-align: top;*/
+    white-space: nowrap;
+}
+
+.button-insert:hover {
+    background-color: #1e8449;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+/*when click is move in the Y-axis 2 pixel*/
+.button-insert:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+}
+
+.button-insert:hover {
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.button-find {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #27ae60;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 0.5;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /*vertical-align: top;*/
+    white-space: nowrap;
+}
+
+.button-find:hover {
+    background-color: #1e8449;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.button-find:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+}
+
+.button-find:hover {
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.button-edit {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #332cf2;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.button-edit:hover {
+    background-color: #211e84;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.button-edit:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+}
+
+.button-edit:hover {
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.button-del {
+    margin-right: 30px;
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #f22c2c;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.button-del:hover {
+    background-color: #841e1e;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.button-del:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+}
+
+.button-del:hover {
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+/* Part of product*/
+.container {
+    background-color: #002fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 30px 12px inset;
+}
+
+
+/* the dot will represent as a line of block
+and each  of them will have a circle block */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/*if it is showThis class or the dot is covered, it will change the color*/
+.showThis,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    /*set the animation name to use further in keyfrmae*/
+    animation-duration: 1.5s;
+    /*duration of movement*/
+}
+
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.box-left, .box-right {
+    box-sizing: border-box;
+    flex: 1;
+    
+}
+.box-right{
+    margin-left: 10px;
+    overflow: auto;
+}
+
+.detail{
+    font-size: 16px;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: .8;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.title-page {
+    display: flex;
+    justify-content: center;
+    /*height: 600px;*/
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/*in the section it will display as a flex*/
+section {
+    display: flex;
+    justify-content: center;
+    /*height: 600px;*/
+    align-items: center;
+    width: 100%;
+    background-color: #002fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 30px 12px inset;
+}
+
+.cards-container {
+    display: flex;
+    /* height: 700px;*/
+    justify-content: center;
+    position: relative;
+}
+
+/*set the rowSlide to be wrap because we want to show every card in full picture and
+we can have multiple line when we decrease the size of screen.*/
+.rowSlide {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*thid will do the flex as a column and it will hide the overflow picture and info*/
+.card {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 400px;
+    margin: 9px;
+    margin-top: 80px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    align-self: normal;
+}
+
+/*set the size of picture*/
+.card img {
+    width: 290px;
+    height: 400px;
+}
+
+.draft {
+    opacity: 0.5;
+}
+
+.draft:hover {
+    opacity: 0.6;
+}
+
+/*set the topic designed*/
+.topicRec {
+    position: absolute;
+    color: #ffffff;
+    margin-top: 30px;
+    font-size: 25px;
+
+}
+
+/*this is the box of information*/
+.info {
+    height: 100px;
+    width: 290px;
+    box-sizing: border-box;
+    position: absolute;
+    background: rgb(27, 27, 27, .7);
+    color: white;
+    bottom: 0px;
+}
+
+
+/*give a list of each property in information in cards*/
+.card-date {
+    color: rgb(89, 189, 255);
+    font-size: 15px;
+    margin-left: 5px;
+    padding-bottom: 6px;
+    padding: 6px;
+}
+
+.card-name {
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    font-size: 20px;
+
+}
+
+.card-loca {
+    margin-left: 10px;
+    padding-bottom: 5px;
+    font-size: 10px;
+}
+
+.card:hover,
+.boxUsers:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/*the box of info will increase the height box so the butto of get tickt will show up*/
+.card:hover .info {
+    height: 150px;
+    transition: 0.4s;
+}
+
+/*this is a button of 'Edit' and 'Delete' - the visibility is hidden first.
+It will show up again when you hover the card*/
+.button-container {
+    margin-top: 0;
+    justify-content: flex-end;
+}
+
+/*show the edit and delete button when mouse over*/
+.card:hover .button-container,
+.boxUsers:hover .button-container {
+   
+    transition: 0.1s;
+}
+
+/*set the position to relative*/
+footer {
+    background-color: #24262b;
+    position: relative;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #24262b;
+    padding: 100px 15%;
+    color: #607dff;
+    display: flex;
+}
+
+.footer-container div {
+    text-align: center;
+}
+
+.footer-container div h3 {
+
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: rgb(255, 230, 0);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*this will be used in column of 'ticketBoo!'*/
+.footer-col1 a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-col1 h1 {
+    font-size: 1x;
+    width: 100px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.footer-col1 h1:hover {
+    color: #ff0000;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+/*this will be used in column of 'general text'*/
+.footer-col2 {
+    flex-grow: 1;
+    /*ใช้กำหนดขนาดของแต่ละ item ว่าให้ขยายขนาดเท่าไหร่ใน container เมื่อเทียบกับ items อื่นๆ */
+}
+
+.footer-col2 p {
+    color: #ffffff;
+    font-size: 17px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*this will be used in column of 'Contact us'*/
+.footer-col3 i {
+    font-size: 20px;
+}
+
+.social-icon a {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+}
+
+.footer-col3 a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col3 a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
+/*add copyright */
+.footer-container .cpRight {
+    position: absolute;
+    font-size: 10px;
+    color: #535353;
+    bottom: 10px
+}
+
+
+
+@media screen and (max-width: 990px) {
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav {
+        display: block;
+    }
+
+    header .bar {
+        position: fixed;
+        width: 100%;
+        height: 210px;
+        top: 80px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;
+        padding: 10px;
+    }
+
+    .iconbar:hover {
+        background-color: #4450fd;
+        transition: 0.5s;
+    }
+
+
+    .bar a {
+        display: block;
+        font-size: 17px;
+        padding: 12px;
+        /*ระยะห่าง*/
+        margin: 10px;
+
+    }
+}
+
+.wrapper {
+    z-index: 1000;
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 480px;
+    /*Defines the maximum width of the box*/
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    /*shadow*/
+}
+
+@media screen and (max-width: 990px) {
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav {
+        display: block;
+    }
+
+    header .bar {
+        position: fixed;
+        width: 100%;
+        height: 150px;
+        top: 80px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;
+        padding: 10px;
+
+    }
+
+    .iconbar:hover {
+        background-color: #4450fd;
+        transition: 0.5s;
+    }
+
+
+    .bar a {
+        display: block;
+        font-size: 17px;
+        padding: 12px;
+        /*ระยะห่าง*/
+        margin: 10px;
+        /*ให้ระหว่างกล่อง home about... ห่าง*/
+    }
+
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav #acctbar {
+        display: inline;
+        margin: 20px;
+    }
+
+    .iconNav #acctbar:hover {
+        width: 50px;
+        height: 50px;
+        color: #ffd900;
+        transition: 0.4s;
+        background: none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-image: none;
+
+    }
+
+    header .iconNav {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 230px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;
+    }
+}
+
+.searchUser {
+    margin: 0%;
+    padding: 10px;
+    text-align: center;
+    font-size: 100%;
+
+}
+
+.topic {
+    font-size: 15px;
+}
+
+.eachsearch {
+    padding: 0.7%;
+    display: inline;
+}
+
+.search-button {
+    padding: 0.5%;
+}
+
+.search-button:hover {
+    cursor: pointer;
+}
+
+
+
+.topic {
+    font-size: 20px;
+}
+
+/*adjust the box size*/
+.form-inner form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*adjust the box size of the input*/
+.form-inner form .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+/* .form-inner form .row {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+} */
+
+/* .form-inner form .row .col input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 3px;
+    transition: all 0.3s ease;
+} */
+
+.form-inner form .box input {
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 3px;
+    transition: all 0.3s ease;
+}
+
+
+.lastcol {
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.form-inner form .lastcol select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.form-inner form .row input:focus,
+.form-inner form .lastcol select:focus {
+    border-color: #fa4299;
+}
+
+/*fucus - Change the color of the border when a user presses it.*/
+.form-inner form .field input:focus {
+    border-color: #fa4299;
+    /* box-shadow: inset 0 0 3px #fb6aae; */
+}
+
+/*Sets the color when not pressed to gray.*/
+.form-inner form .field input::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+/*form .field input:focus::placeholder {
+    color: #b3b3b3;
+}*/
+
+/*to the width of the border to the context 5 pixels*/
+.form-inner form .pass-link {
+    margin-top: 5px;
+}
+
+/*change align text to center*/
+.form-inner form .signup-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*If not pressed there will be NO underline. */
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+    color: #fa4299;
+    text-decoration: none;
+}
+
+/*Press and there is underline*/
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/*change align text to center*/
+.form-inner .title-login-admin h3 {
+    text-align: center;
+}
+
+/*set the button pressed*/
+form .btn {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*Set the color of the button pressed.*/
+form .btn .btn-layer {
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: #362FD9;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+}
+
+/*Change the color of button when the mouse over it.*/
+form .btn:hover .btn-layer {
+    background: #85CDFD;
+}
+
+/*Change the font color and set the aspect.*/
+form .btn input[type="submit"] {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.row {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+.col {
+    padding: 10px;
+    /* font-size: 30px; */
+    /* text-align: center; */
+}
+
+.checkbox {
+    text-align: center;
+}
+
+#editform {
+    background-color: #1e8449;
+}
+
+.pass-link {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close-symbol::before,
+.close-symbol::after {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close-symbol::before {
+    transform: rotate(45deg);
+}
+
+.close-symbol::after {
+    transform: rotate(-45deg);
+}
+
+.detail{
+    font-size: 16px;
+}
+
+
+
+
+/*create box for all input*/
+.wrapperInfo {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    max-width: 590px;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    /*Defines the maximum width of the box*/
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /*shadow*/
+}
+
+.pass-link {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close-symbol::before,
+.close-symbol::after {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close-symbol::before {
+    transform: rotate(45deg);
+}
+
+.close-symbol::after {
+    transform: rotate(-45deg);
+}

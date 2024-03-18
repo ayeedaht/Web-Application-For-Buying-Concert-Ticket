@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Boo!</title>
+    <link rel="stylesheet" href="/style/Details.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+
+
+
+<body>
+    <header>
+        <a href="/html/HomePage.html" class="logo"><img src="/logo/TicketBoo_Logo.png"> ticketBoo!</a>
+        <!--show the logo in nav bar-->
+
+        <!--show the text button in the middle-->
+        <nav class="bar">
+            <a href="/html/HomePage.html">Home</a>
+            <a href="/html/aboutUs.html">About</a>
+            <a class="thispage" href="/html/AllDetails.html">Concert & Entertainment</a>
+
+        </nav>
+
+        <!--show the symbol in the right of the page-->
+        <div class="iconNav">
+            <a href="#" class="fa fa-heart" id="heartbar"></a>
+            <a href="#" class="fa fa-shopping-cart" id="shopbar"></a>
+            <a href="/html/Userlogin.html"><i class="fa fa-user" id="acctbar"></i></a>
+
+
+
+        </div>
+        <!--this will not show yet at fisrt until the size of screen get smaller-->
+        <div class="iconbar" onclick="showBar()">
+            <i class="fa fa-bars" id="menubar"></i>
+        </div>
+
+    </header>
+
+    <br><br><br><br><br><br>
+
+    
+    <div class="contain-box">
+        <!-- This class is to display the head content -->
+            <h3>Concert & Entertainment</h3>
+    </div>
+    
+    <!-- class hidden will hide the result until the users click on 
+    the white search icon at the search bar -->
+    <section id="ggg" class="hidden">
+
+        <!-- this class covers all the content of results that is displayed on the page -->
+        <div class="gallery">
+
+            <!-- this class covers each box of the results -->
+            <div class="content">
+                <!-- If this button is clicked, it will show the details of that content
+                which are Concert or Entertainment. -->
+                <a href="/html/Detail02.html">
+                    <img class="detail" src="/images/The1975-Poster.jpg"><br>
+                    <h4> The 1975 Live in Bangkok </h4><br>
+                    <h7> Tue 4 April 2023 [19:00] </h7>
+
+                    <!-- If this button is clicked, it will show the details of that content
+                which are Concert or Entertainment. -->
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+            <div class="content">
+                <a href="/html/Detail04.html">
+                    <img class="detail" src="/images/WaterBomb-Poster.jpg"><br>
+                    <h4> WATERBOMB BANGKOK </h4><br>
+                    <h7> 13 April - 14 April 2023 [12:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="/html/Detail01.html">
+                    <img class="detail" src="/images/Ph1-Poster.jpg"><br>
+                    <h4> 2023 pH-1 ‘ABOUT DAMN TIME’ World Tour in Bangkok </h4><br>
+                    <h7> Sun 19 March 2023 [19:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="/html/Detail03.html">
+                    <img class="detail" src="/images/AM-Poster.png"><br>
+                    <h4> Arctic Monkeys Live in Bangkok 2023 </h4><br>
+                    <h7> Thu 9 March 2023 [18:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="/html/Detail05.html">
+                    <img class="detail" src="/images/Pelupo-Poster.png"><br>
+                    <h4> Pelupo Festival 2023 </h4><br>
+                    <h7> Sat 11 March 2023 [15:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/Louis-Poster.jpg"><br>
+                    <h4> LOUIS TOMLINSON FAITH IN THE FUTURE WORLD TOUR 2023 BANGKOK </h4><br>
+                    <h7> Sat 22 April 2023 [16:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/Harry-Poster.png"><br>
+                    <h4> HARRY STYLES PRESENTS LOVE ON TOUR 2023 BANGKOK </h4><br>
+                    <h7> Sat 11 March 2023 [16:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/NctDream-Poster.jpg"><br>
+                    <h4> NCT DREAM TOUR THE DREAM SHOW2 in BANGKOK </h4><br>
+                    <h7> 10 - 12 March 2023 [18:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/Treasure-Poster.png"><br>
+                    <h4> 2023 TREASURE TOUR [HELLO] IN BANGKOK </h4><br>
+                    <h7> 31 March - 2 April 2023 [17:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/YoungOhm-Poster.png"><br>
+                    <h4> YOUNGOHM Concert "Sound from Dekwat </h4><br>
+                    <h7> Mon 25 February 2023 [17:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/Wallows-Poster.jpg"><br>
+                    <h4> WALLOWS TELL ME THAT IT’S OVER TOUR 2023 BANGKOK </h4><br>
+                    <h7> Mon 20 February 2023 [18:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="#">
+                    <img class="detail" src="/images/TheVamps-Poster.png"><br>
+                    <h4> The Vamps Greatest Hits Tour in Bangkok </h4><br>
+                    <h7> Fri 10 February 2023 [19:00] </h7>
+                    <button class="details"> Detail </button>
+                </a>
+            </div>
+
+        </div>
+
+</body>
+
+
+
+<!--This is the container in footer and we have three column of information.-->
+<footer class="footer-container">
+
+    <!--this is first column-->
+    <div class="footer-col1">
+        <h3>ticketBoo!</h3>
+        <a href="/html/HomePage.html" id="move1">
+            <h1>Home</h1>
+        </a>
+        <a href="/html/aboutUs.html" id="move2">
+            <h1>About</h1>
+        </a>
+        <a href="/html/AllDetails.html" id="move3">
+            <h1>Concert & Entertainment</h1>
+        </a>
+    </div>
+
+    <!--this is second column-->
+    <div class="footer-col2">
+        <h3>Hi :) All of Concert Lovers</h3>
+        <p>
+            Our organization is sincere to provide you with the best service. <br>
+            "Life is short, buy the tickets."
+        </p>
+    </div>
+
+    <!--this is third column-->
+    <div class="footer-col3">
+        <h3>Contact Us</h3>
+        <div class="social-icon">
+            <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
+            <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+            <a href="javascript:void(0);"><i class="fa fa-instagram"></i></a>
+            <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+
+    </div>
+    <div class="cpRight">Copyright &copy 2023 tickeBool!. All Rights Reserved</div>
+
+
+
+    <script>
+
+        /*this use for open and close the bar*/
+        let show = 0;
+        function showBar() {
+            /*if show is 0, it will open the bar. and 1 will close the bar*/
+            /*we will change the color and change the position of the bar and icon too 
+            (icon will change in the case of the size of screen change to less than 700px*/
+            if (show == 0) {
+                show = 1;
+                document.getElementsByClassName('bar')[0].style.left = "0px";
+                document.getElementsByClassName('iconNav')[0].style.left = "0px";
+            } else {
+                show = 0;
+                document.getElementsByClassName('bar')[0].style.left = "-100%";
+                document.getElementsByClassName('iconNav')[0].style.left = "-100%";
+            }
+        }
+    </script>
+</footer>
+
+</html>

@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*แก้เรื่องกำหนด width แล้วขนาดที่ได้ออกมา ไม่เท่ากับ width ที่กำหนดไว้*/
+    border: none;
+    text-decoration: none; /*พวกขีดเส้นใต้*/
+    
+}
+
+header .logo {
+    font-family: 'Rampart One', cursive;
+}
+
+body,
+footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden; /*not showing the content that has over size than the page*/
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000; /*set this header to get in front*/
+    box-shadow: rgba(102, 102, 107, 0.2) 0px 7px 29px 0px;
+}
+
+.logo img {
+    position: relative;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.logo {
+    color: #fb6f18;
+    font-size: 35px;
+    line-height: 80px; /*the distance between each sentences ระยะห่างระหว่างบรรทัด*/
+    padding: 0 30px;
+    font-weight: bold;
+}
+
+
+/*this use for nav bar of text button*/
+.bar a {
+    color: rgb(119, 119, 119);
+    font-size: 15px;
+    padding: 12px;
+    /*ระยะห่าง*/
+    margin-right: 10px;
+    /*ให้ระหว่างกล่อง home about... ห่าง*/
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/*the 'Home' which has class of thispage will be the one who has color of blue*/
+.bar a.thispage {
+    background: #fb6f18;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/*Every thing that in the bar with thie a part except 'Home' text button will
+change the background if we hover it.*/
+.bar a:hover:not(a.thispage) {
+    /*ทุกnavยกเว้นปุ่มhome*/
+    cursor: pointer;
+    background: #ff00b3;
+    color: whitesmoke;
+    transition: .3s;  /*Add this transition to make it more dimension*/
+}
+
+/*the symbol button in nav bar*/
+.iconNav #searchbar,
+.iconNav #heartbar,
+.iconNav #shopbar,
+.iconNav #acctbar {
+    cursor: pointer; /*if the mouse is on this symbol, it will change the mouse to be pointner*/
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgb(255, 253, 242);
+    border-radius: 50%;  /*make this in to circle shape*/
+    text-align: center;
+    background: rgb(27, 27, 27, .5);
+}
+
+
+/*Set this value first and make it display as a none*/
+.iconbar {
+    cursor: pointer;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgb(255, 253, 242);
+
+    /*float: right;*/
+    border-radius: 50%;
+
+    text-align: center;
+    background-color: #002fff;
+}
+
+.iconbar {
+    display: none;
+}
+
+/*if we cover this, t will change color with the transition*/
+.iconNav #searchbar:hover,
+.iconNav #heartbar:hover,
+.iconNav #shopbar:hover,
+.iconNav #acctbar:hover {
+    background: #ff00b3;
+    transition: 0.4s;
+}
+
+
+body {
+    background: rgb(255, 255, 255);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ourTeam{
+    display: flex;
+    text-align: center;
+    justify-items: center;
+}
+
+.ourTeam img{
+	width: 70%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+/*img{
+    height: 60px;
+    width: 60px;
+}
+*/
+
+
+
+.container {
+    padding: 20px;
+    position: relative;
+	width: 100%;
+	height: 100vh;
+	background: radial-gradient(#fb6f18,#ffe17d);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.topic h1{
+    color: #fff;
+	font-size: 40px;
+	text-align: center;
+}
+
+.topic h2{
+    color: #fff;
+	font-size: 25px;
+	text-align: center;
+}
+
+.memberBox {
+    width:50%;
+    padding: 16px;
+	background: #1b1229;
+	border-radius: 15px;
+	transition: all .38s ease; 
+    margin: 20px;
+}
+
+.nameMember {
+    font-size: 23px;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 8px;
+}
+
+.number {
+    color: #ff00f2;
+	font-size: 17px;
+	margin-top: -10px;
+}
+
+.text-paragraph {
+    font-size:12px;
+	font-weight: 600;
+	color: #b7b4bb;
+    margin-top: 20px;
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+
+.memberBox:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+.List{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200vh;
+    background: radial-gradient(#fb6f18,#ffe17d);
+}
+
+.boxOfList {
+    width: 700px;
+    border-bottom: 30px solid #fb6f18;
+    border-radius:  0 0 10px 10px;
+    
+}
+
+.boxOfList h1 {
+    color:#ffffff;
+    background: #fb6f18;
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.boxOfList ul{
+    font-size: 20px;
+    position: relative;
+    background-color: azure;
+
+}
+
+.boxOfList ul li{
+    padding: 10px;
+    width: 100%;
+    background: #fefeff;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transition: transform 0.5s;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.boxOfList ul:hover li{
+    opacity: 0.2;
+}
+
+
+.boxOfList ul li:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 100;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fb6f18;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+
+.boxOfList ul span{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background: #fb6f18;
+    color: #ffffff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  /*  transform: translateY(-20px);*/
+}
+
+.boxOfList ul li:hover span{
+    background: #ffffff;
+    color: #fb6f18;
+}
+
+
+.boxOfList ul li:hover h3{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.boxOfList h3{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.topicRec {
+    font-size: 20px;
+}
+.cards-container {
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#fb6f18,#ffe17d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  
+#output{
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center;
+    
+}
+.boxUsers {
+    
+    flex: 1;
+    font-size: 14px;
+    padding: 30px;
+    margin: 30px 30px 10px 30px;
+    border-radius: 10px;
+    background-color: rgb(238, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+@media screen and (max-width: 990px) {
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav {
+        display: block;
+    }
+
+    header .bar {
+        position: fixed;
+        width: 100%;
+        height: 210px;
+        top: 80px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;
+        padding: 10px;
+
+        
+        /**/
+    }
+
+    .iconbar:hover{
+        background-color: #4450fd;
+        transition: 0.5s;
+    }
+
+
+    .bar a {
+        display: block;
+        font-size: 17px;
+        padding: 12px;
+        /*ระยะห่าง*/
+        margin: 10px;
+        /*ให้ระหว่างกล่อง home about... ห่าง*/
+        /* border-radius: 50px;
+        transition: 0.5s;
+      /*  z-index: 10;กำหนดลำดับชองสิ่งของใยยเว็ป ถ้าindexมากกว่ามันจะอยู่ห้ย่า*/
+    }
+
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav #searchbar,
+    .iconNav #heartbar,
+    .iconNav #shopbar,
+    .iconNav #acctbar {
+        display: inline;
+        margin: 20px;
+    }
+
+    .iconNav #searchbar:hover,
+    .iconNav #heartbar:hover,
+    .iconNav #shopbar:hover,
+    .iconNav #acctbar:hover {
+        width:50px;
+        height: 50px;
+        color: #ffd900;
+        transition: 0.4s;
+        background:none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-image: none;
+
+}
+
+    header .iconNav {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 290px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;   
+    }
+}
+
+
+.pass-link {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close-symbol::before,
+.close-symbol::after {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close-symbol::before {
+    transform: rotate(45deg);
+}
+
+.close-symbol::after {
+    transform: rotate(-45deg);
+}
+
+.detail{
+    font-size: 16px;
+}
+
+
+
+
+/*create box for all input*/
+.wrapperInfo {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    max-width: 590px;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    /*Defines the maximum width of the box*/
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /*shadow*/
+}
+
+.pass-link {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close-symbol::before,
+.close-symbol::after {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close-symbol::before {
+    transform: rotate(45deg);
+}
+
+.close-symbol::after {
+    transform: rotate(-45deg);
+}

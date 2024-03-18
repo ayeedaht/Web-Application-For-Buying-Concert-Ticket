@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketBoo - Pelupo Festival 2023</title>
+    <link rel="stylesheet" href="/style/Details.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCheMVFtdq-toMwD0qa12GHiMvK1W25jbI"></script>
+    <script>
+        function initMap() { // Defines a function named initMap(), which will be called later to initialize a Google Map.
+            
+            /** Creates a new Map object using the Google Maps API. 
+             * The first argument passed to the Map constructor is the HTML element that will contain the map. 
+             * In this case, it is the element with an ID of map. The second argument is an object containing 
+             * options for the map, including the center and zoom properties. **/
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 13.614551979478938, lng: 100.79134858003798 },
+                zoom: 16
+            });
+
+            /** Creates a new Marker object using the Google Maps API. The Marker object is used to place a marker on the map.**/
+            var marker = new google.maps.Marker({
+                /** Sets the position of the marker on the map to a latitude and 
+                 * longitude coordinate, specified as an object.**/
+                position: { lat: 13.614551979478938, lng: 100.79134858003798 },
+                /** Sets the map property of the Marker object to the map variable created earlier. 
+                 * This tells the Marker object which map to place the marker on.**/
+                map: map,
+                title: 'Siam Country Club' // sets the title of the marker
+            });
+        }
+    </script>
+</head>
+
+<!-- onload="initMap()" is an event handler that is triggered when the body element finishes loading. 
+    The onload event is commonly used to run JavaScript code once the page has finished loading. 
+    In this case, it calls the initMap() function, which initializes the Google Map. -->
+<body onload="initMap()">
+    <header>
+        <a href="/html/HomePage.html" class="logo"><img src="/logo/TicketBoo_Logo.png"> ticketBoo!</a>
+        <!--show the logo in nav bar-->
+
+        <!--show the text button in the middle-->
+        <nav class="bar">
+            <a href="/html/HomePage.html">Home</a>
+            <a href="/html/aboutUs.html">About</a>
+            <a class="thispage" href="/html/AllDetails.html">Concert & Entertainment</a>
+
+        </nav>
+
+        <!--show the symbol in the right of the page-->
+        <div class="iconNav">
+            <a href="#" class="fa fa-heart" id="heartbar"></a>
+            <a href="#" class="fa fa-shopping-cart" id="shopbar"></a>
+            <a href="/html/Userlogin.html"><i class="fa fa-user" id="acctbar"></i></a>
+        </div>
+        
+        <!--this will not show yet at fisrt until the size of screen get smaller-->
+        <div class="iconbar" onclick="showBar()">
+            <i class="fa fa-bars" id="menubar"></i>
+        </div>
+
+    </header>
+
+    <!-- This class to display the banner of the concert -->
+    <div class="Banner">
+        <img class="banner" src="/images/Pelupo-Banner.jpg" alt="ABOUT DAMN TIME">
+    </div>
+
+    <!-- This class to display the poster of the concert -->
+    <div class="containerLeft">
+        <div class="Poster">
+            <img class="poster" src="/images/Pelupo-Poster.png" alt="ABOUT DAMN TIME">
+        </div>
+    </div>
+
+
+    <!-- Concert details -->
+
+    <div class="detail-container"> <!-- This class is create for contain the details -->
+        <div class="Description">
+            <div class="Box">
+                <div class="Font deco">
+                    <h3>Description</h3>
+                    <hr class="title-underline">
+                    <div class="font-view">
+                        <p>Leave your worries behind you and prepare to join us at PELUPO International</p>
+                        <p>Music Festival at The Fields at Siam Country Club in Chonburi on March 11, 2023.</p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>PELUPO will feature performances by world class artists and productions as well</p>
+                        <p>as activities to bring a proper festival experience to Thailand.</p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>We invite you to join us on this journey as we celebrate music, art and life and</p>
+                        <p>create new experiences and relationships. PELUPO will be the annual festival for</p>
+                        <p>music lovers. For our inaugural festival, performances will be spread across two</p>
+                        <p>stages in the midst of the green fields of Siam Country Club.</p>
+                        <p>
+                            <br>
+                        </p>
+                        <p><b>PELUPO MUSIC FESTIVAL 2023</b></p>
+                        <p><b>11 MARCH 2023</b></p>
+                        <p><b>SIAM COUNTRY CLUB, PATTAYA</b></p>
+                        <p>
+                        <p>
+                            <img src="/images/Pelupo-Zone.jpg" class="fr-fic fr-dib" alt="ABOUT DAMN TIME">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Date, Concert's name, Location -->
+
+        <div class="Buy">
+            <div class="First-line"> <!-- Date, Concert's name, -->
+                <div class="Event date">
+                    <span class="day">11</span>
+                    <br>
+                    <span>
+                        <span class="bold">
+                            Sat
+                            /
+                        </span>
+                        Mar
+                    </span>
+                </div>
+
+                <div class="Event name">
+                    <h3>Pelupo Festival 2023</h3>
+                </div>
+            </div>
+
+            <div class="Second-line">
+                <div class="Event info">
+                    <ul>
+                        <li class="date-time">
+                            <i class="fa fa-clock-o" id="clock"></i>
+                            <span>
+                                Sat 11 March 2023 • 15:00
+                                <br>
+                            </span>
+                        </li>
+                        <li class="location">
+                            <i class="fas fa-map-marker-alt" id="pin"></i>
+                            <span>Siam Country Club, Pattaya, Thailand</span>
+                        </li>
+                        <li class="age">
+                            <i class="fas fa-user-alt" id="human"></i>
+                            Under 15's must be accompanied by a parent or guardian. ID check required. No ticket
+                            required for under 12's
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google maps API -->
+        <!-- div element with an id of map. The style attribute is used to apply CSS styling to the element. 
+            In this case, it sets the height and width of the element to 505px and 530px, respectively, 
+            and positions it as fixed. This element is likely used as a container for the Google Map created by the JavaScript -->
+        <div id="map" style="height: 505px; width: 530px; position: fixed;"></div>
+
+        <!-- Buy Ticket -->
+
+        <div id="TicketBox" class="ticket">
+            <div class="Event nonePadding"> <!-- The buying ticket zone -->
+                <div class="type"> <!-- Ticket type head, Price head, Qty head -->
+                    <div class="text">
+                        <div class="Booking head ticket-type">Ticket Type</div>
+                        <div class="Booking head price">Price</div>
+                        <div class="Booking head qty">Qty</div>
+                    </div>
+                </div>
+
+                <div id="1" class="early"> <!-- Type of tickets that are not sold out -->
+                    <div class="earlytext"> <!-- and can choose to buy up to 4 tickets -->
+                        <div class="tic body ticket-type">
+                            Phase 2: GA
+                            <span class="ticket-description">
+                                GENERAL ADMISSION
+                            </span>
+                        </div>
+
+                        <div class="tic body price center">
+                            <div class="pricing">
+                                4,300
+                                <span>THB</span>
+                            </div>
+                        </div>
+
+                        <div class="tic body qty center">
+                            <section id="selected" name="four"> <!-- Select the quantity of the ticket uo to 4-->
+                                <select>
+                                    <option value="0"> 0 </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="2" class="general">
+                    <div class="generaltext">
+                        <div class="tic body ticket-type">
+                            Phase 2: VIP
+                            <span class="ticket-description">
+                                VIP
+                            </span>
+                        </div>
+
+                        <div class="tic body price center">
+                            <div class="pricing">
+                                2,200
+                                <span>THB</span>
+                            </div>
+                        </div>
+
+                        <div class="tic body qty center">
+                            <section id="selected" name="four">
+                                <select>
+                                    <option value="0"> 0 </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="3" class="general">
+                    <div class="generaltext">
+                        <div class="tic body ticket-type">
+                            Kids (under 12’s)
+                            <span class="ticket-description">
+                                Must be accompanied by a parent or guardian. ID check required.
+                            </span>
+                        </div>
+
+                        <div class="tic body price center">
+                            <div class="pricing">
+                                FREE
+                                <!-- <span>THB</span> -->
+                            </div>
+                        </div>
+
+                        <div class="tic body qty center">
+                            <section id="selected" name="four">
+                                <select>
+                                    <option value="0"> 0 </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="root"> <!-- Break line between the detail price and buy button-->
+                <div class="buyTicketArea">
+                    <div class="buyTicketButton">
+                        <div class="Button">
+                            <div data-radium="true"> <!-- manage inline style on react elements-->
+                                <button id="BooButton-buyticket" class="BooButton">Buy Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!--This is the container in footer and we have three column of information.-->
+<footer class="footer-container">
+
+    <!--this is first column-->
+    <div class="footer-col1">
+        <h3>ticketBoo!</h3>
+        <a href="/html/HomePage.html" id="move1">
+            <h1>Home</h1>
+        </a>
+        <a href="/html/aboutUs.html" id="move2">
+            <h1>About</h1>
+        </a>
+        <a href="/html/AllDetails.html" id="move3">
+            <h1>Concert & Entertainment</h1>
+        </a>
+    </div>
+
+    <!--this is second column-->
+    <div class="footer-col2">
+        <h3>Hi :) All of Concert Lovers</h3>
+        <p>
+            Our organization is sincere to provide you with the best service. <br>
+            "Life is short, buy the tickets."
+        </p>
+    </div>
+
+    <!--this is third column-->
+    <div class="footer-col3">
+        <h3>Contact Us</h3>
+        <div class="social-icon">
+            <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
+            <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+            <a href="javascript:void(0);"><i class="fa fa-instagram"></i></a>
+            <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+
+    </div>
+    <div class="cpRight">Copyright &copy 2023 tickeBool!. All Rights Reserved</div>
+
+
+
+    <script>
+        /*this use for open and close the bar*/
+        let show = 0;
+        function showBar() {
+            /*if show is 0, it will open the bar. and 1 will close the bar*/
+            /*we will change the color and change the position of the bar and icon too 
+            (icon will change in the case of the size of screen change to less than 700px*/
+            if (show == 0) {
+                show = 1;
+                document.getElementsByClassName('bar')[0].style.left = "0px";
+                document.getElementsByClassName('iconNav')[0].style.left = "0px";
+            } else {
+                show = 0;
+                document.getElementsByClassName('bar')[0].style.left = "-100%";
+                document.getElementsByClassName('iconNav')[0].style.left = "-100%";
+            }
+        }
+    </script>
+</footer>
+
+</html>

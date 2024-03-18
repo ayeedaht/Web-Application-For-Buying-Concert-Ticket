@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="/style/Loginpage.css" />
+    <title>Register Admin</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1 class="title">Admin Signup</h1>
+        <div class="form-inner">
+            <form class="signup" action="/signup-submit" method="POST" >
+                <div class="row">
+                    <div class="col box">
+                        <label for="fname" class="clabel">First Name</label>
+                        <br>
+                        <input type="text" class="cinput" name="fname" id="fname" placeholder="  First name">
+                    </div>
+                    <div class="col box">
+                        <label for="lname" class="clabel">Last Name</label>
+                        <br>
+                        <input type="text" class="cinput" name="lname" id="lname" placeholder="  Last name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col box">
+                        <label for="birthdate" class="clabel">Date Of Birth</label>
+                        <br>
+                        <input type="date" class="cinput" name="dob" id="birthdate">
+                    </div>
+                    <div class="col">
+                      
+                        <label for="gender" class="clabel">Gender</label>
+                        <div class="checkbox">
+
+                            <input type="radio" checked="checked" name="gender" id="gender" value="M">
+                            <label class="radio-container">Male</label>
+
+                            <input type="radio" name="gender" id="gender" value="F">
+                            <label class="radio-container">Female</label>
+                        </div>
+   
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col box">
+                        <label for="code" class="clabel">Code</label>
+                        <br>
+                        <input type="text" class="cinput" name="code" id="code" placeholder="  Last 3 digit of ID">
+                    </div>
+                    <div class="col box">
+                        <label for="password" class="clabel">Password</label>
+                        <br>
+                        <input type="password" class="cinput" name="password" id="password">
+                    </div>
+                </div>
+
+                <div class="lastcol">
+                    <label for="role" class="clabel">Role</label>
+                    <br>
+                    <select name="role" id="role" class="selectrole">
+                        <option disabled="disabled" selected="selected">Choose option</option>
+                        <option>Administrator</option>
+                    </select>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Signup" />
+                </div>
+                <div class="pass-link">
+                    <a href="/html/Userlogin.html">
+                        Back
+                    </a>
+                </div>
+                <div class="signup-link">
+                    Already have an account?
+                    <a href="/html/Userlogin.html">Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

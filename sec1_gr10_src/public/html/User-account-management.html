@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User account management!</title>
+    <link rel="stylesheet" href="/style/management.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="/html/HomePage.html" class="logo"><img src="/homepagePic/logo/TicketBoo_Logo.png" alt=""> Admin
+            ticketBoo!</a>
+        <!--show the logo in nav bar-->
+
+        <!--show the text button in the middle-->
+        <nav class="bar">
+            <a href="/html/Product-management.html">Product management</a>
+            <a class="thispage" href="#">User account management</a>
+
+        </nav>
+
+        <!--show the symbol in the right of the page-->
+        <div class="iconNav">
+            <a href="/html/Userlogin.html">
+                <i class="fa fa-user" id="acctbar"></i></a>
+        </div>
+
+        <!--this will not show yet at fisrt until the size of screen get smaller-->
+        <div class="iconbar" onclick="showBar()">
+            <i class="fa fa-bars" id="menubar"></i>
+        </div>
+
+    </header>
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <!--this section use to show the recommend concert-->
+    <div class="title-page">
+        <h1>User account management</h1>
+    </div>
+
+    <div class="contain-box">
+        <!-- This class is to store data for adding a new products -->
+        <div class="customize">
+            <a href="/user">
+                <h3>Add User</h3>
+            </a>
+        </div>
+    </div>
+    <form type="normal" class="searchUser" action="/search-user-submit" method="POST" id="search-form">
+        <label class="topic">Advanced Search: </label>
+        <div class="eachsearch">
+            <input id="code" type="search" placeholder="Search Code" list="list" name="code">
+
+        </div>
+
+        <div class="eachsearch">
+
+            <input id="name" type="search" placeholder="Name" list="list" name="name">
+
+        </div>
+
+        <div class="eachsearch">
+            <input id="date" type="search" placeholder="Date of Birth" list="list" name="date">
+
+        </div>
+        <input type="submit" value="Search"></input>
+    </form>
+
+    <!--This is the edit user information form which will display as a none-->
+    <div class="wrapper" id="editForm" style="display:none;">
+        <div>
+            <h1 class="topic">Edit Admin Information</h1>
+            <form action="/edituser" method="POST">
+                <input type="hidden" name="admin_code" id="adminCodeInput">
+
+                <div class="row">
+                    <div class="col box">
+                        <label for="fname" class="clabel">First Name</label>
+                        <br>
+                        <input type="text" class="cinput" name="fname" id="fname" placeholder="  First name" required>
+                    </div>
+                    <div class="col box">
+                        <label for="lname" class="clabel">Last Name</label>
+                        <br>
+                        <input type="text" class="cinput" name="lname" id="lname" placeholder="  Last name" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col box">
+                        <label for="birthdate" class="clabel">Date Of Birth</label>
+                        <br>
+                        <input type="date" class="cinput" name="dob" id="birthdate" required>
+                    </div>
+                    <div class="col">
+
+                        <label for="gender" class="clabel">Gender</label>
+                        <div class="checkbox">
+
+                            <input type="radio" checked="checked" name="gender" id="gender" value="M" required>
+                            <label class="radio-container">Male</label>
+
+                            <input type="radio" name="gender" id="gender" value="F" required>
+                            <label class="radio-container">Female</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col box">
+                        <!--The code will be only for read, user cannot change the code-->
+                        <label for="code" class="clabel">Code (Cannot Change)</label>
+                        <br>
+                        <input type="text" class="cinput" name="code" id="codeAd" readonly>
+                    </div>
+                    <div class="col box">
+                        <label for="password" class="clabel">Password</label>
+                        <br>
+                        <input type="password" class="cinput" name="password" id="password" required>
+                    </div>
+                </div>
+
+                <div class="lastcol">
+                    <label for="role" class="clabel">Role</label>
+                    <br>
+                    <select name="role" id="role" class="selectrole" required>
+                        <option disabled="disabled" selected="selected">Choose option</option>
+                        <option>Administrator</option>
+                    </select>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Save Changes" />
+                </div>
+                <div class="pass-link" onclick="closeFormEdit()">
+                    <span class="close-symbol"></span>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!--This use to show the all of user when user press search with an empty box of code, name, date of birth.
+        If admin want to see the detail they can click on that card. In will pop up.-->
+    <p id="output"></p>
+
+    <!-- This will hidden first then it will be shown when user click edit. It will pop up in this id='pop'-->
+    <div id="infoPop" class="wrapperInfo" style="display:none;">
+        <p id="pop"></p>
+
+    </div>
+
+    <script>
+        const searchForm = document.getElementById('search-form');
+        /**If user submit the button of search the admin
+         * it will com to this
+        */
+        searchForm.addEventListener('submit', event => {
+            event.preventDefault();
+            // Keep all of the input value from the box input that has id of code,name,and date
+            const code = document.getElementById('code').value;
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+
+            /**fetch to the port of 3000 which is the client side to send the code, name, and date to be
+             * as a query. If the form is empty, it will show everything admin. It fetch with the ,method of 'POST'*/ 
+            fetch('http://localhost:3000/search-user-submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code, name, date }) // convert to JSON and send it
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector("#output").innerHTML = null;  // we point to the output box and ready to do the html
+                    const jsonData = document.getElementById('output');
+
+                    /**we will print out by using innerHTML to show up at the part of the box that has id='output'*/
+                    for (let i = 0; i < data.length; i++) {  
+                        /**If user click the box it will vall showInfo function and pass the admin_code*/
+                        jsonData.innerHTML += `<div class='boxUsers' onclick="showInfo('${data[i].admin_code}')"><h2 class='txt'>` + data[i].fname + " " + data[i].lname + "</h2>"
+                            + "<p class='txt'><b>Code: </b>" + data[i].admin_code + "</p>"
+                            + "<p class='txt'><b>Date of birth: </b>" + data[i].dob.substring(0, 10) + "</p>"
+                            + "<p><b>Role: </b>" + data[i].role + "</p></div>"
+                            /*If user click edit, it will call the function if showEditForm and pass the admin code*/
+                            + "<div class='button-container'><button class='button-edit' role='button'  data-code='" + data[i].admin_code + "' onclick='showEditForm(" + data[i].admin_code + ")' id='edit'>Edit</button>"
+                            + "<button class='button-del' role='button' data-code='" + data[i].admin_code + "' id='delete'>Delete</button></div>";
+                    }
+
+                    document.addEventListener('click', function (event) {
+                        if (event.target.classList.contains('button-del')) {
+                            /**when user click delete button ,it will come to this code.
+                             * First it keep the adminCode to pass to the client side
+                             * so when serrver side receive that , they can use it to delete
+                             * that information. 
+                            */
+                            const adminCode = event.target.dataset.code;
+                            console.log('User Code to be deleted: ' + adminCode);
+                            /**Then fetch to client side with the port of 3000 to delete and send the admin code*/
+                            fetch(`http://localhost:3000/deleteAdmin/`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ admin_code: adminCode })
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data);
+                                    if (data === false) {            // If it's work, it will reload the page to update value
+                                        window.location.reload();
+                                    }
+                                })
+                                .catch(error => console.error(error));
+                        }
+                    });
+
+
+                })
+                .catch(error => console.error(error));
+        });
+
+
+
+    </script>
+    <script>
+        // This will show bu use style at the point that has the id og editForm
+        // and for the codeInput is use to fill in the fixed value that we will put it
+        // this is the readonly, so user can't modify this code that we put it already
+        function showEditForm(adminCode) {
+            const form = document.getElementById('editForm');
+            const codeInput = document.getElementById('codeAd');
+            codeInput.value = adminCode;
+            form.style.display = 'block'; // Show the form
+        }
+
+        /**This showInfo need to get the information from the server,
+         * it receive the admincod and pass it to port of 3000 which specify
+         * the adminCode.
+        */
+        function showInfo(adminCode) {
+            console.log(adminCode)
+            fetch(`http://localhost:3000/admin_infos/${adminCode}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {                          /*After the response, we get the information now*/
+                    console.log(data);
+                    let code = data.data.admin_code;
+                    let fname = data.data.fname;
+                    let lname = data.data.lname;
+                    let dob = data.data.dob;
+                    let gender = data.data.gender;
+                    let pass = data.data.password;
+                    let log = data.data.login_log;
+                    let role = data.data.role;
+
+                    document.querySelector("#pop").innerHTML = null;  // we will print it here, the part of pop to pop up the box
+                    const pop = document.getElementById('pop');
+                    // display this pop up box to show the infor
+                    document.getElementById('infoPop').style.display = 'block';
+                    // show all details
+                    pop.innerHTML += "<h1>" + fname + " " + lname + " [" + code + "] </h1><h3 class='detail'>Date of Birth: " + dob.substring(0, 10) + "</h3>";
+                    pop.innerHTML += "<h3 class='detail'>Gender: " + gender + "</h3><h3 class='detail'>Password: " + pass + "</h3>";
+                    pop.innerHTML += "<h3 class='detail'>Email: " + fname+"."+lname.substring(0,3)+"@gmail.com" + "</h3>";
+                    pop.innerHTML += "<h3 class='detail'>Login Date: " + log.substring(0, 10) + "</h3><h3 class='detail'>Login Time:" + log.substring(11, 19) + "</h3><h3 class='detail'>Role: " + role + "</h3>";
+                    pop.innerHTML += "<div class='pass-link' onclick='closeForm()'><span class='close-symbol'></span></div>";
+                })
+
+        }
+
+        /**To close the form edit is to close the edit form by useing the style.display = none*/
+        function closeFormEdit() {
+            const form = document.getElementById('editForm');
+            form.style.display = 'none';
+
+        }
+
+        // Same as this, this will close the pop up box, to be display as a none again
+        function closeForm() {
+            const form = document.getElementById('infoPop');
+            form.style.display = 'none';
+
+        }
+        
+        /*this use for open and close the bar*/
+        let show = 0;
+        function showBar() {
+            /*if show is 0, it will open the bar. and 1 will close the bar*/
+            /*we will change the color and change the position of the bar and icon too 
+            (icon will change in the case of the size of screen change to less than 700px*/
+            if (show == 0) {
+                show = 1;
+                document.getElementsByClassName('bar')[0].style.left = "0px";
+                document.getElementsByClassName('iconNav')[0].style.left = "0px";
+            } else {
+                show = 0;
+                document.getElementsByClassName('bar')[0].style.left = "-100%";
+                document.getElementsByClassName('iconNav')[0].style.left = "-100%";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

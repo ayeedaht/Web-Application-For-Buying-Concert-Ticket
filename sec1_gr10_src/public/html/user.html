@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <title>Add User</title>
+    <link rel="stylesheet" href="/style/Product.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <a href="/html/HomePage.html" class="logo"><img src="/homepagePic/logo/TicketBoo_Logo.png"> Admin ticketBoo!</a>
+        <!--show the logo in nav bar-->
+
+        <!--show the text button in the middle-->
+        <nav class="bar">
+            <a href="/html/Product-management.html">Product management</a>
+            <a class="thispage" href="/html/User-account-management.html">User account management</a>
+
+        </nav>
+
+        <!--show the symbol in the right of the page-->
+        <div class="iconNav">
+            <a href="/html/Userlogin.html">
+                <i class="fa fa-user" id="acctbar"></i></a>
+        </div>
+
+
+        <!--this will not show yet at fisrt until the size of screen get smaller-->
+        <div class="iconbar" onclick="showBar()">
+            <i class="fa fa-bars" id="menubar" ></i>
+        </div>
+    </header>
+
+    <br><br><br><br>
+    <div class="wrapper">
+        <!-- This is a section to let people who have forgotten their password know what to enter. -->
+        <div class="head-text">
+            <h1>Add User</h1>
+            <p>To add a new user. Please complete this entire form.</p>
+        </div>
+        <!--this will keep every box form-->
+        <div class="form-inner">
+            <!-- Form for user to sign up -->
+            <form action="/signup-submit" method="POST" class="product">
+                <!--Class field is to hold all the value from the input.-->
+                <div class="field">
+                    <label for="titletxt">First Name</label>
+                    <input type="text" id="titletxt"  name="fname" placeholder="First Name of User" required/>
+                </div>
+                <br>
+                <div class="field">
+                    <label for="destxt">Last Name</label>
+                    <input type="text" id="destxt"  name="lname" placeholder="Last Name of User" required/>
+                </div>
+                <br>
+            
+                <div class="field">
+                    <label for="date">Date Of Birth</label>
+                    <input type="date" id="date" name="dob"  placeholder="DD-MM-YYYY" required/>
+                </div>
+                <br />
+                <div class="field">
+                    <label for="code">Gender</label>
+                    <div class="checkbox">
+                        <label class="radio-container"> - Male</label>
+                        <input type="radio" name="gender"  checked="checked" id="gender" value="M" required>
+                        <label class="radio-container"> - Female</label>
+                        <input type="radio" name="gender" id="gender" value="F" required>
+                        
+                    
+                    </div>
+                </div>
+                <br /><br />
+                <div class="field">
+                    <label for="code">Code</label>
+                    <input type="text" id="code" name="code" placeholder="xxx" required/>
+                </div>
+                <br />
+                <div class="field">
+                    <label for="pass">Password</label>
+                    <input type="text" id="pass" name="password"  title="password" required/>
+                </div>
+                <br>
+                 <div class="field">
+                    <label for="role">Role</label>
+                    <select name="role" id="role" class="selectrole" required>
+                        <option disabled="disabled" selected="selected">Choose option</option>
+                        <option>Administrator</option>
+                    </select>
+                </div>
+                <br>
+                
+                <div class="total">
+                    <div class="field btn">
+                        <a href="/html/User-account-management.html">Cancel</a>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer" id="ad"></div>
+                        <input type="submit" value="Add" />
+                        
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

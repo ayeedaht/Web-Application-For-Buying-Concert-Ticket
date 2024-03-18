@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About us</title>
+    <link rel="stylesheet" href="/style/aboutUs.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <a href="/html/HomePage.html" class="logo"><img src="/logo/TicketBoo_Logo2.png"> ticketBoo!</a> <!--show the logo in nav bar-->
+
+        <!--show the text button in the middle-->
+        <nav class="bar">
+            <a href="/html/HomePage.html">Home</a>
+            <a href="/html/aboutUs.html" class="thispage">About</a>
+            <a href="/html/AllDetails.html">Concert&Entertainment</a>
+
+        </nav>
+
+        <!--show the symbol in the right of the page-->
+        <div class="iconNav">
+            <a href="#" class="fa fa-heart" id="heartbar"></a>
+            <a href="#" class="fa fa-shopping-cart" id="shopbar"></a>
+            <a href="/html/Userlogin.html"><i class="fa fa-user" id="acctbar"></i></a>
+        </div>
+
+        <!--this will not show yet at fisrt until the size of screen get smaller-->
+        <div class="iconbar" onclick="showBar()">
+            <i class="fa fa-bars" id="menubar" ></i>
+        </div>
+    </header>
+    
+    <br><br><br><br></br>
+
+
+    <div class="container">
+        <div class="topic">
+            <h1>"About Us"</h1>
+            <h2>Our Team members</h2>
+        </div>
+        <div class="ourTeam">
+            <div class="memberBox">
+                <img src="/aboutUsPic/img/candy-corn.png" alt="candy">
+                <h3 class="nameMember">
+                    Suphavadee Cheng 
+                </h3>
+                <h3 class="number">
+                    ID: 6488120 
+                </h3>
+                <p class="text-paragraph">
+                    A sophomore student at the faculty of ICT, Mahidol University.
+                </p>
+            </div>
+            <div class="memberBox">
+                <img src="/aboutUsPic/img/pumpkin.png" alt="candy">
+                <h3 class="nameMember">
+                    Ponnapassorn Iamborisut
+                </h3>
+                <h3 class="number">
+                    ID: 6488179 
+                </h3>
+                <p class="text-paragraph">
+                    A sophomore student at the faculty of ICT, Mahidol University.
+                </p>
+            </div>
+            <div class="memberBox">
+                <img src="/aboutUsPic/img/vampire.png" alt="candy">
+                <h3 class="nameMember">
+                    Thadeeya Duangkaew
+                </h3>
+                <h3 class="number">
+                    ID: 6488181 
+                </h3>
+                <p class="text-paragraph">
+                    A sophomore student at the faculty of ICT, Mahidol University.
+                </p>
+            </div>
+            <div class="memberBox">
+                <img src="/aboutUsPic/img/witch.png" alt="candy">
+                <h3 class="nameMember">
+                    Ravikarn Jarungjitvittawas
+                </h3>
+                <h3 class="number">
+                    ID: 6488210 
+                </h3>
+                <p class="text-paragraph">
+                    A sophomore student at the faculty of ICT, Mahidol University.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="cards-container">
+            <!--this will show the topic of this section-->
+            <h1 class="topicRec">- All Admins -</h1>
+            <!--The output of all of the ticket will be showned here-->
+            <div class="rowSlide" id='output'>
+
+            </div>
+        </div>
+    </section>
+    <div id="infoPop" class="wrapperInfo" style="display:none;">
+        <p id="pop"></p>
+
+    </div>
+<section class="List">
+        <div class="boxOfList">
+        <h1>References</h1>
+        <ul>
+            <li><span>1</span><a href="https://youtu.be/YOb67OKw62s"><h3>Responsive Footer Design using Html & Css</h3></a></li>
+            <li><span>2</span><a href="https://youtu.be/MJUssi2c6Ls"><h3>Complete Responsive Food / Restaurant Website Design Using HTML / CSS / JAVASCRIPT - From Scratch</h3></a></li>
+            <li><span>3</span><a href="https://youtu.be/t5zFfDdvApE"><h3>Animated Card Hover Effect | Html & CSS | CodeEra</h3></a></li>
+            <li><span>4</span><a href="https://youtu.be/Ei_zX44ItEU"><h3>อยากเขียน HTML CSS JS เซียนๆ และเข้าใจการทำงานของมัน ให้ทำแบบนี้ (ดูจบบรรลุ!) 👨‍💻💯</h3></a></li>
+            <li><span>5</span><a href="https://youtu.be/bW8X-tt5AZQ"><h3>Responsive Image Slider | With Manual Button & Auto-play Navigation Visibility - HTML CSS Javascript</h3></a></li>
+            <li><span>6</span><a href="https://youtu.be/oLgtucwjVII"><h3>How to Create Responsive Navigation Bar using HTML and CSS</h3></a></li>
+            <li><span>7</span><a href="https://youtube.com/watch?v=kRs3aTi3pzU&si=EnSIkaIECMiOmarE"><h3>Responsive Product Cards design with HTML and CSS</h3></a></li>
+            <li><span>8</span><a href="https://www.youtube.com/watch?v=RctaFustg5w"><h3>Search Bar Using Html CSS & javascript | CSS Expandable Search Box</h3></a></li>
+            <li><span>9</span><a href="https://youtu.be/H-DvSPRnKWQ"><h3>How To Create Our Team Section Using HTML And CSS | Responsive HTML CSS Tutorial</h3></a></li>
+            <li><span>10</span><a href="https://youtube.com/watch?v=kNO2WkKJzu0&si=EnSIkaIECMiOmarE"><h3>Animated Search Box using HTML CSS & JavaScript | Elastic Animation on Search Bar</h3></a></li>
+            <li><span>11</span><a href="https://www.ticketmelon.com/"><h3>Ticketmelon</h3></a></li>
+            <li><span>12</span><a href="https://youtu.be/V8PU_geaCCU"><h3>Animated Login and Registration Form in HTML CSS & JavaScript</h3></a></li>
+        </ul>
+    </div>
+</section>
+
+<script>
+
+        /*fetch to get all of the tickets from the SQL. We fetch the port at 3000 which is the port
+          of client side.*/
+          fetch('http://localhost:3000/getadmins', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json()) // wait for response
+            .then(data => {
+                console.log(data)
+                    document.querySelector("#output").innerHTML = null;  // we point to the output box and ready to do the html
+                    const jsonData = document.getElementById('output');
+
+                    /**we will print out by using innerHTML to show up at the part of the box that has id='output'*/
+                    for (let i = 0; i < data.length; i++) {  
+                        /**If user click the box it will vall showInfo function and pass the admin_code*/
+                        jsonData.innerHTML += `<div class='boxUsers' onclick="showInfo('${data[i].admin_code}')"><h2 class='txt'>` + data[i].fname + " " + data[i].lname + "</h2>"
+                            + "<p class='txt'><b>Code: </b>" + data[i].admin_code + "</p>"
+                            + "<p class='txt'><b>Date of birth: </b>" + data[i].dob.substring(0, 10) + "</p>"
+                            + "<p><b>Role: </b>" + data[i].role + "</p></div>"
+                            /*If user click edit, it will call the function if showEditForm and pass the admin code*/
+                          console.log(data[i].admin_code)  
+                    }
+            });
+
+
+        /**This showInfo need to get the information from the server,
+         * it receive the admincod and pass it to port of 3000 which specify
+         * the adminCode.
+        */
+        function showInfo(adminCode) {
+            console.log(adminCode)
+            fetch(`http://localhost:3000/admin_infos/${adminCode}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {                          /*After the response, we get the information now*/
+                    console.log(data);
+                    let code = data.data.admin_code;
+                    let fname = data.data.fname;
+                    let lname = data.data.lname;
+                    let dob = data.data.dob;
+                    let gender = data.data.gender;
+                    let pass = data.data.password;
+                    let log = data.data.login_log;
+                    let role = data.data.role;
+
+                    document.querySelector("#pop").innerHTML = null;  // we will print it here, the part of pop to pop up the box
+                    const pop = document.getElementById('pop');
+                    // display this pop up box to show the infor
+                    document.getElementById('infoPop').style.display = 'block';
+                    // show all details
+                    pop.innerHTML += "<h1>" + fname + " " + lname + " [" + code + "] </h1><h3 class='detail'>Date of Birth: " + dob.substring(0, 10) + "</h3>";
+                    pop.innerHTML += "<h3 class='detail'>Gender: " + gender + "</h3>";
+                    pop.innerHTML += "<h3 class='detail'>Email: " + fname+"."+lname.substring(0,3)+"@gmail.com" + "</h3><h3 class='detail'>Role: " + role + "</h3>";
+                    pop.innerHTML += "<div class='pass-link' onclick='closeForm()'><span class='close-symbol'></span></div>";
+                })
+
+        }
+
+
+        // Same as this, this will close the pop up box, to be display as a none again
+        function closeForm() {
+            const form = document.getElementById('infoPop');
+            form.style.display = 'none';
+
+        }
+
+     /*this use for open and close the bar*/
+     let show=0;
+     function showBar(){
+         /*if show is 0, it will open the bar. and 1 will close the bar*/
+         /*we will change the color and change the position of the bar and icon too 
+         (icon will change in the case of the size of screen change to less than 700px*/
+          if(show==0){
+             show=1;
+             document.getElementsByClassName('bar')[0].style.left = "0px";
+             document.getElementsByClassName('iconNav')[0].style.left = "0px";
+         }else{
+             show=0;
+             document.getElementsByClassName('bar')[0].style.left = "-100%";
+             document.getElementsByClassName('iconNav')[0].style.left = "-100%";
+         }
+     }
+ </script>
+
+</body>
+
+</html>
+

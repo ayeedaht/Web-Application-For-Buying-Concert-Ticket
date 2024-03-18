@@ -1,0 +1,1379 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*แก้เรื่องกำหนด width แล้วขนาดที่ได้ออกมา ไม่เท่ากับ width ที่กำหนดไว้*/
+    border: none;
+    text-decoration: none;  /*remove the decoration*/
+    /*พวกขีดเส้นใต้*/
+}
+
+header .logo {
+    font-family: 'Rampart One', cursive;
+}
+
+body,
+footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden; /*not showing the content that has over size than the page*/
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000; /*set this header to get in front*/
+    box-shadow: rgba(102, 102, 107, 0.2) 0px 7px 29px 0px;
+}
+
+.logo img {
+    position: relative;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.logo {
+    color: #002fff;
+    font-size: 35px;
+    line-height: 80px; /*the distance between each sentences ระยะห่างระหว่างบรรทัด*/
+    padding: 0 30px;
+    font-weight: bold;
+}
+
+
+/*this use for nav bar of text button*/
+.bar a {
+    color: rgb(119, 119, 119);
+    font-size: 15px;
+    padding: 12px;
+    /*ระยะห่าง*/
+    margin-right: 10px;
+    /*ให้ระหว่างกล่อง home about... ห่าง*/
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/*the 'Home' which has class of thispage will be the one who has color of blue*/
+.bar a.thispage {
+    background: #002fff;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*Every thing that in the bar with thie a part except 'Home' text button will
+change the background if we hover it.*/
+.bar a:hover:not(a.thispage) {
+    /*ทุกnavยกเว้นปุ่มhome*/
+    cursor: pointer;
+    background: #ff00b3;
+    color: whitesmoke;
+    transition: .3s;  /*Add this transition to make it more dimension*/
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*the symbol button in nav bar*/
+.iconNav #searchbar,
+.iconNav #heartbar,
+.iconNav #shopbar,
+.iconNav #acctbar {
+    cursor: pointer; /*if the mouse is on this symbol, it will change the mouse to be pointner*/
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgb(255, 253, 242);
+    border-radius: 50%;  /*make this in to circle shape*/
+    text-align: center;
+    background: rgb(27, 27, 27, .5);
+    
+}
+
+
+/*Set this value first and make it display as a none*/
+.iconbar {
+    cursor: pointer;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgb(255, 253, 242);
+    border-radius: 50%;
+    text-align: center;
+    background-color: #002fff;
+    
+}
+
+.iconbar {
+    display: none;
+}
+
+/*if we cover this, t will change color with the transition*/
+.iconNav #searchbar:hover,
+.iconNav #heartbar:hover,
+.iconNav #shopbar:hover,
+.iconNav #acctbar:hover {
+    background: #ff00b3;
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/*set the body part to order as a column display*/
+body {
+    background: rgb(255, 255, 255);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+/* Banner of the Concert or Event on top of the website */
+
+.banner {
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 80px;
+}
+
+/* Container detail */
+.detail-container {
+    min-height: 200vh;
+}
+
+/* Poster contained */
+.containerLeft {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+/* Details of the Concert or Event on the website*/
+.poster {
+    margin-top: -270px;
+    display: block;
+    /* -webkit-box-sizing: border-box; */
+    max-width: 425px;
+    max-height: 610px;
+    border-radius: 10px;
+    box-shadow: rgb(155 155 155 / 30%) 0px 0px 10px 0px;
+    margin-left: 205px;
+}
+
+.Description {              /* Vertically align the description with the poster จัดตำแหน่ง Description ให้ตรงกับ poster */
+    padding-right: 24px;
+    margin-top: 32px;
+    margin-left: 205px;
+}
+
+
+.Box {
+    box-sizing: border-box;
+}
+
+.deco {                     /* Increase the top spacing of the description and poster เพิ่มระยะห่างข้างบนของ Description กับ poster */
+    margin-top: 32px;
+}
+
+.Font {
+    color: rgb(0, 0, 0);
+}
+
+
+.Font h3 {                 /* Edit Title Description แก้ไขหัวข้อ Description */
+    display: block;              
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.Font .title-underline {
+    margin-left: 0%;              /* Underline Description ขีดเส้นใต้ใต้ Description */
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    max-width: 36%;
+}
+
+hr {
+    display: block;              /* The distance of the underlined line ระยะห่างของเส้นที่ขีดเส้นใต้ */
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+.font-view {                     /* Allows long words to be able to be broken and wrap */
+    word-wrap: break-word;
+}
+
+p {                              /* Detail font size ขนาดตัวอักษรของรายละเอียด */
+    font-size: 14px;              
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+p {
+    display: block;              /* Arrange a scale of details จัดระยะของรายละเอียด*/
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.font-view img {                 /* Set the size of the image of the concert zone จัดขนาดภาพของผังงาน*/
+    width: 550px;
+    position: relative;
+    max-width: 100%;
+}
+
+
+
+/* Details on the right side of the Concert or Event on the website*/
+.Buy {
+    position: absolute;
+    min-width: 550px;
+    margin: -1600px 200px 200px;
+    margin-left: 800px;
+    display: block;
+}
+
+.First-line {            /* Seperate the word box of the Date and Concert's name */
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 8px 4px;
+}
+
+.Second-line {           /* Seperate the word box detail */
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 8px 4px;
+}
+
+.Event.date {           /* Setting the text */
+    width: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.Event {                /* Create table */
+    display: table-cell;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: rgb(155 155 155 / 30%) 0px 0px 10px 0px;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.Event span.day {          /* Span text */
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.Event span.bold {         /* Make bold on span */
+    font-weight: 600;
+}
+
+.Event.name {              /* Setting the text */
+    width: 320px;
+    vertical-align: middle;
+}
+
+.Event h3 {                /* Setting event font */
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.Event.info ul {          /* Setting the list text */
+    margin: 0px;
+    padding: 0px 0px 0px 2em;
+    list-style: none;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+.Event.info ul li.date-time #clock {          /* Clock Icon */
+    font-size: 20px;
+}
+
+.Event.info ul li.location #pin {            /* Map pin Icon */
+    font-size: 20px;
+}
+
+.Event.info ul li.age #human {              /* Age Icon */
+    font-size: 18px;
+}
+
+ul {                     /* Setting the list text */
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.Event .info ul li {
+    margin: 0px;
+    padding: 0px 32px 16px 0px;
+    position: relative;
+    word-break: break-word;
+}
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+.Event .info ul {
+    margin: 0px;
+    padding: 0px 0px 0px 2em;
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Google Map API */
+#map {
+    position: fixed;
+    margin: -1360px;
+    margin-left: 810px;
+    width: 5050px;
+    height: 4050px;
+}
+
+
+/* Buy Ticket */
+
+.ticket {              /* Setting the buy ticket */
+    max-width: 550px;
+    top: 64px;
+    margin: 1420px 0 -4px;
+    margin-left: 810px;
+    position: sticky;
+}
+
+.Event.nonePadding {
+    padding: 0px;
+}
+
+.type {               /* Ticket type head, Price head, Qty head */
+    padding: 16px;
+    border-bottom: 2px solid rgb(255, 255, 255);  /* Add more white line between Ticket Type and detail price below */
+}
+
+.text {               /* Setting the text */
+    width: 100%;
+    display: table;
+    border-spacing: 0ps;
+}
+
+.Booking.ticket-type.head {
+    padding: 0px;
+    border-bottom: none; /* Remove underline */
+}
+
+.Booking.ticket-type {
+    width: 50%;
+}
+
+.Booking {
+    display: table-cell;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.Booking.price.head {
+    padding: 0px;
+    border-bottom: none; /* Remove underline of the head text */
+}
+
+.Booking.price {         /* Price width */
+    width: 25%;
+}
+
+.Booking.qty.head {      
+    padding: 0px;
+    border-bottom: none;   /* Remove underline of the head text */
+}
+
+.Booking.qty {             /* Qty width */
+    width: 25%;
+    padding: 16px 16px 16px 0px;
+}
+
+.Event .center {
+    text-align: center;
+}
+
+.VIP {          
+    width: 100%;
+    padding: 0px 16px;
+    color: inherit;
+    background-color: inherit;
+}
+
+.VIPtext {             /* Setting size of the details of the ticket buy zone */
+    width: 100%;
+    display: table;
+    border-spacing: 0px;
+}
+
+.tic .ticket-type .body {
+    padding: 10px 16px 10px 0px;
+}
+
+.tic .ticket-type {
+    width: 50%;
+}
+
+.tic {
+    display: table-cell;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tic .ticket-description {          /* More detail under the type of ticket */
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 16px;
+    word-break: break-word;
+    white-space: pre-line ;
+}
+
+.tic.price.body {
+    padding: 10px 16px;
+}
+
+.tic.price {
+    width: 25%;
+}
+
+.tic.qty.body {
+    padding: 10px 0px
+}
+
+.tic.qty {
+    width: 25%;
+    padding: 16px 16px 16px 0px;
+}
+
+.tic.qty.body select {          /* Select the quantity of the ticket */
+    width: 48px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+select {
+    word-wrap: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+
+select {                    /* Select the quantity of the ticket */
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: field;
+    cursor: default;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 0px;
+}
+
+.early {
+    width: 100%;
+    padding: 0px 16px;
+    color: inherit;
+    background-color: inherit;
+}
+
+.earlytext {
+    width: 100%;
+    display: table;
+    border-spacing: 0px;
+}
+
+.pricing {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+}
+
+.general {
+    width: 100%;
+    padding: 0px 16px;
+    color: inherit;
+    background-color: inherit;
+}
+
+.generaltext {
+    width: 100%;
+    display: table;
+    border-spacing: 0px;
+}
+
+.root {
+    border: none;
+    height: 1px;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+.buyTicketArea {
+    width: 100%;
+    display: table;
+    border-spacing: 0px;
+}
+
+.buyTicketButton {
+    width: 100%;
+    padding: 14px 16px 16px;
+    text-align: center;
+}
+
+.BooButton {                    /* Buy Ticket button setting: size, color, etc. */
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 30px;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+    color: #4a4a4a;
+}
+
+
+
+/* AllDetails page */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flexbox;
+    flex-direction: column;
+    font-family: poppins;
+    background: #fff;
+}
+
+h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    padding-top: 10px;
+    min-height: 150px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* set format for class gallery*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+    padding: 50px;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    margin: 50px 0;
+    margin-top: -5%;
+    margin-bottom: 20%;
+}
+
+.contain-box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 50px;
+    color: #002fff;
+}
+
+/* set format for each class contents */
+.content {
+    width: 20%;
+    height: fit-content;
+    min-height: 800px;
+    margin: 10px;
+    justify-content: stretch;
+    align-items: flex-end;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #fff;
+}
+
+/* when the cursor is on this area, it will a little bit move */
+.content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+img.detail {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+
+}
+
+h7 {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    margin: 10px;
+}
+
+button.details {
+    text-align: center;
+    font-size: 24px;
+    color: #0147be;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 25px;
+    border-radius: 10px;
+    background: #abd1e6;
+}
+
+
+@media screen and (max-width: 786px) {
+    .content {
+        width: 100%;
+
+    }
+
+    .gallery {
+        padding: 50px;
+    }
+}
+
+
+.search2 {
+    margin-top: 2%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    position: sticky;
+    width: 60px;
+    height: 60px;
+    background: #e8c2d3;
+    border-radius: 60px;
+    transition: .5s;
+    box-shadow: 0 0 10px #947d67;
+    overflow: hidden;
+}
+
+.search2.active {
+    width: 500px;
+}
+
+.search2 .icon2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: #e8c2dd;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search2 .icon2::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid#684536;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+}
+
+.search2 .icon2::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #684536;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search2 .input2 {
+    position: relative;
+    width: 350px;
+    height: 60px;
+    left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search2 .input2 input {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: all 0.5s;
+}
+
+.searchResult2 {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    width: 15px;
+    height: 5px;
+    right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchResult2::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid#ffffff;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+}
+
+.searchResult2::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #ffffff;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+
+
+/* ----------------------------------------------------------------- */
+
+.search3 {
+    margin-top: 2%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    position: sticky;
+    width: 60px;
+    height: 60px;
+    background: #c5dbf3;
+    border-radius: 60px;
+    transition: .5s;
+    box-shadow: 0 0 10px #947d67;
+    overflow: hidden;
+}
+
+.search3.active {
+    width: 500px;
+}
+
+.search3 .icon3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: #c5dbf3;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search3 .icon3::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid#684536;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+}
+
+.search3 .icon3::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #684536;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search3 .input3 {
+    position: relative;
+    width: 350px;
+    height: 60px;
+    left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search3 .input3 input {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: all 0.5s;
+}
+
+.searchResult3 {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    width: 15px;
+    height: 5px;
+    right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchResult3::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid#ffffff;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+
+}
+
+.searchResult3::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #ffffff;
+    transform: translate(6px, 6px) rotate(315deg);
+
+}
+
+
+
+/* Footer */
+/* set the position to relative */
+footer {
+    background-color: #24262b;
+    position: relative;
+    justify-content: center;
+}
+
+/*this container is for the background of the whole footer*/
+.footer-container {
+    width: 100%;
+    background-color: #24262b;
+    padding: 100px 15%;
+    color: #607dff;
+    display: flex;
+}
+
+.footer-container div {
+    text-align: center;
+}
+
+.footer-container div h3 {
+
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: rgb(255, 230, 0);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/*this will be used in column of 'ticketBoo!'*/
+.footer-col1 a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-col1 h1 {
+    font-size: 1x;
+    width: 100px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+/*if ypu hove in the column of 'ticketBoo!' it will move a bit 
+ left and change the color into red */
+.footer-col1 h1:hover {
+    color: #ff0000;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+/*this will be used in column of 'general text'*/
+.footer-col2 {
+    flex-grow: 1;
+    /*ใช้กำหนดขนาดของแต่ละ item ว่าให้ขยายขนาดเท่าไหร่ใน container เมื่อเทียบกับ items อื่นๆ */
+}
+
+.footer-col2 p {
+    color: #ffffff;
+    font-size: 17px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*this will be used in column of 'Contact us'*/
+.footer-col3 i {
+    font-size: 20px;
+}
+
+.social-icon a {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+}
+
+/*this is the style of the 'contact us' icon*/
+.footer-col3 a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col3 a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
+/*add cpyright */
+.footer-container .cpRight {
+    position: absolute;
+    font-size: 10px;
+    color: #535353;
+    bottom: 10px
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+    .slides-container {
+        width: 990px;
+        height: 450px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        /**/
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .slides-container {
+        width: 891px;
+        height: 405px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        /**/
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 405px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav {
+        display: block;
+    }
+
+    header .bar {
+        position: fixed;
+        width: 100%;
+        height: 210px;
+        top: 80px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;
+        padding: 10px;
+
+        
+        /**/
+    }
+
+    .iconbar:hover{
+        background-color: #4450fd;
+        transition: 0.5s;
+    }
+
+
+    .bar a {
+        display: block;
+        font-size: 17px;
+        padding: 12px;
+        /*ระยะห่าง*/
+        margin: 10px;
+        /*ให้ระหว่างกล่อง home about... ห่าง*/
+        /* border-radius: 50px;
+        transition: 0.5s;
+      /*  z-index: 10;กำหนดลำดับชองสิ่งของใยยเว็ป ถ้าindexมากกว่ามันจะอยู่ห้ย่า*/
+    }
+
+    .slides-container {
+        width: 801.9px;
+        height: 364.5px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        /**/
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 364.5px;
+        object-fit: cover;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .slides-container {
+        width: 721px;
+        height: 328px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        /**/
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 328px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .slides-container {
+        width: 648px;
+        height: 295px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        /**/
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 295px;
+        object-fit: cover;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+
+    .slides-container {
+        width: 583px;
+        height: 265.5px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        /**/
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 265.5px;
+        object-fit: cover;
+    }
+
+    .iconbar {
+        display: inline;
+    }
+
+    .iconNav #searchbar,
+    .iconNav #heartbar,
+    .iconNav #shopbar,
+    .iconNav #acctbar {
+        display: inline;
+        margin: 20px;
+    }
+
+    .iconNav #searchbar:hover,
+    .iconNav #heartbar:hover,
+    .iconNav #shopbar:hover,
+    .iconNav #acctbar:hover {
+        width:50px;
+        height: 50px;
+        color: #ffd900;
+        transition: 0.4s;
+        background:none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-image: none;
+
+}
+
+    header .iconNav {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 290px;
+        left: -100%;
+        right: 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        transition: all 0.2s;   
+    }
+}
+
+
+#map{
+    height: 100%;
+    background-color: #002fff;
+}
+
