@@ -1,11 +1,12 @@
-TicketBoo
+# Web-Application-For-Buying-Concert-Ticket
+## TicketBoo
 
 How to run our program
 
-1. First, you Download "sec1_gr10_pj2_ID120_179_181_210.zip"
-2. Second, extract the "sec1_gr10_pj2_ID120_179_181_210.zip" file to "sec1_gr10_pj2_ID120_179_181_210" folder
-3. Third, you have to open "sec1_gr10_pj2_ID120_179_181_210" folder in Visual Studio Code
-4. Fourth, you open "sec1_gr10_pj2_ID120_179_181_210" folder, you have to click the "Terminal" button ad select "New Terminal"
+1. First, you Download "Web-Application-For-Buying-Concert-Ticket.zip"
+2. Second, extract the "Web-Application-For-Buying-Concert-Ticket.zip" file to "Web-Application-For-Buying-Concert-Ticket" folder
+3. Third, you have to open "Web-Application-For-Buying-Concert-Ticket" folder in Visual Studio Code
+4. Fourth, you open "Web-Application-For-Buying-Concert-Ticket" folder, you have to click the "Terminal" button ad select "New Terminal"
     and click the "Terminal" button again ad select "Split Terminal" 
     ** (To open two terminal because we have to run two PORT at the same time) **
 5. Fifth, the first Terminal, you should press command "$ cd sec1_gr10_src"
